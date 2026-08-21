@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { mountFloraRoute } from "@/data/mountFloraRoute";
+import { mountFloraRoute } from "../data/mountFloraRoute";
+import { ENV } from "../lib/env";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -13,7 +14,7 @@ export default function MapComponent() {
     if (map.current) return;
     if (!mapContainer.current) return;
 
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+    mapboxgl.accessToken = ENV.mapboxToken;
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,

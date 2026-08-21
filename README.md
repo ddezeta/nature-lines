@@ -36,11 +36,11 @@ Here's how to get the project running on your local machine.<br>
 3. **Set up your Mapbox Access Token:**
    The map requires a Mapbox access token to work.
 
-   - First, rename `.env.example` to `.env.local`:
+   - First, rename `.env.example` to `.env`:
      ```bash
-     mv .env.example .env.local
+     mv .env.example .env
      ```
-   - Then, open the new `.env.local` file and paste in your access token from your [Mapbox account](https://account.mapbox.com/access-tokens/).
+   - Then, open the new `.env` file and paste in your access token from your [Mapbox account](https://account.mapbox.com/access-tokens/).
 
 ### 3. Run the Development Server
 
