@@ -5,18 +5,18 @@ describe('ENV tests', () => {
   });
 
   it('should succeed when mapboxToken is available', () => {
-    process.env.PUBLIC_MAPBOX_TOKEN = 'test-token-value';
+    process.env.NEXT_PUBLIC_MAPBOX_TOKEN = 'test-token-value';
 
     const { ENV } = require('../env');
     expect(ENV.mapboxToken).toBe('test-token-value');
   });
 
   it('should throw an error if the mapboxToken is missing', () => {
-    delete process.env.PUBLIC_MAPBOX_TOKEN;
+    delete process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
     const importEnvModule = () => require('../env');
     expect(importEnvModule).toThrow(
-      'Missing PUBLIC_MAPBOX_TOKEN env'
+      'Missing NEXT_PUBLIC_MAPBOX_TOKEN env'
     );
   });
 });
